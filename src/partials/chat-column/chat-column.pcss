@@ -1,0 +1,72 @@
+.chat-column {
+    display: flex;
+    border-top: 1px solid #EAEAEA;
+    padding: 12px 0;
+    border-top: 1px solid #EAEAEA;
+    text-decoration: none;
+}
+
+.chat-column:last-child {
+    border-bottom: 1px solid #EAEAEA;
+}
+
+.chat-column__image {
+    margin: 0;
+    max-height: 47px;
+    max-width: 47px;
+}
+
+.chat-column__text {
+    width: 193px;
+    margin: auto auto auto 10px;
+    height: 47px;
+}
+
+.chat-column__user {
+    color: #1E1E1E;
+    margin: 0;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 13px;
+}
+
+.chat-column__message {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: #999999;
+    margin: 4px 0 0;
+    display: block;
+    display: -webkit-box;
+    max-width: 100%;
+    -webkit-line-clamp: 2; /* количество строк */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.chat-column__time-zone {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 47px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.chat-column__time {
+    margin: 0;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 12px;
+    color: #999999;
+}
+
+.chat-column__counter {
+    background: #3369F3;
+    width: 20px;
+    heght: 20px;
+    border-radius: 50%;
+    text-align: center;
+    color: #fff;
+}
