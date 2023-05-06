@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "dev": "parcel --no-cache ./src/pages/*.hbs ",
-    "build": "parcel build index.html",
+    "build": "parcel build ./src/pages/*.hbs",
     "start": "parcel build ./src/pages/*.hbs && node ./server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

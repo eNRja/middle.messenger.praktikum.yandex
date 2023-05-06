@@ -2,19 +2,23 @@
     <div class="user-chat__header">
         <img class="user-chat__header_avatar" src="../asserts/Ellipse.png" alt="avatar">
         <p class="user-chat__header_name">Alexey</p>
-        <div class="user-chat__header_menu">
+        <nav class="user-chat__header_menu">
             <button class="user-chat__header_menu_button"></button>
-            <div class="user-chat__header_menu_content">
-                <a href="./add-user.hbs">
-                    <img src="../asserts/add.svg" alt="add">
-                    <span>Add user</span>
-                </a>
-                <a href="./delete-user.hbs">
-                    <img src="../asserts/delete.svg" alt="delete">
-                    <span>Delete user</span>
-                </a>
-            </div>
-        </div>
+            <ul class="user-chat__header_menu_content">
+                <li>
+                    <a href="./add-user.hbs">
+                        <img src="../asserts/add.svg" alt="add">
+                        <span>Add user</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="./delete-user.hbs">
+                        <img src="../asserts/delete.svg" alt="delete">
+                        <span>Delete user</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </div>
     <div class="user-chat__section">
         <p class="user-chat__section_date">19 July</p>
@@ -46,24 +50,29 @@
         </div>
     </div>
     <div class="user-chat__footer">
-        <div class="user-chat__footer_additional">
+        <nav class="user-chat__footer_additional">
             <button class="user-chat__footer_additional_button"></button>
-            <div class="user-chat__footer_additional_content">
-                <a href="#">
-                    <img src="../asserts/photo_video.svg" alt="photo_video">
-                    <span>Photo & video</span>
-                </a>
-                <a href="#">
-                    <img src="../asserts/file.svg" alt="file">
-                    <span>File</span>
-                </a>
-                <a href="#">
-                    <img src="../asserts/location.svg" alt="location">
-                    <span>Location</span>
-                </a>
-            </div>
-        </div>
-
+            <ul class="user-chat__footer_additional_content">
+                <li>
+                    <a href="#">
+                        <img src="../asserts/photo_video.svg" alt="photo_video">
+                        <span>Photo & video</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../asserts/file.svg" alt="file">
+                        <span>File</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../asserts/location.svg" alt="location">
+                        <span>Location</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
         <form class="user-chat__footer_form">
             <input class="user-chat__footer_input" type="text" value="Write a message...">
             <button class="user-chat__footer_send-button"></button>

@@ -5,6 +5,7 @@
 }
 
 .profile__back_button {
+    display: flex;
     height: 100%;
     width: 64px;
     background-color: #FBFBFB;
@@ -21,6 +22,11 @@
 .profile__back_button:hover {
     cursor: pointer;
     opacity: 0.6;
+}
+
+.profile__back_button a {
+    height: 100%;
+    width: 100%;
 }
 
 .profile__container {
@@ -98,6 +104,10 @@
     margin: 0;
     outline: 0;
     flex-grow: 1;
+}
+
+.profile__container_buttons ul {
+    list-style: none;
 }
 
 .profile__button {

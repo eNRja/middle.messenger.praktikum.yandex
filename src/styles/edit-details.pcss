@@ -5,6 +5,7 @@
 }
 
 .edit-details__back_button {
+    display: flex;
     height: 100%;
     width: 64px;
     background-color: #FBFBFB;
@@ -18,9 +19,19 @@
     border-left: 1px solid #EAEAEA;
 }
 
+.edit-details__back_button a {
+    height: max-content;
+    width: max-content;
+}
+
 .edit-details__back_button:hover {
     cursor: pointer;
     opacity: 0.6;
+}
+
+.edit-details__back_button a {
+    height: 100%;
+    width: 100%;
 }
 
 .edit-details__container {
