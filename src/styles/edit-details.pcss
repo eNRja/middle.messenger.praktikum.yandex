@@ -1,18 +1,17 @@
 .edit-details {
     display: flex;
     height: 100vh;
-    background-color: #fff;
+    background-color: var(--main-bg-color);
 }
 
 .edit-details__back_button {
     display: flex;
     height: 100%;
     width: 64px;
-    background-color: #FBFBFB;
+    background-color: var(--main-color);
     background-image: url(../asserts/send_button.png);
     background-repeat: no-repeat;
     background-position: center;
-    -webkit-transform: rotate(180deg);
     transform: rotate(180deg);
     transition: 0.4s;
     border: none;
@@ -20,7 +19,11 @@
 }
 
 .edit-details__back_button a {
+    height: -webkit-max-content;
+    height: -moz-max-content;
     height: max-content;
+    width: -webkit-max-content;
+    width: -moz-max-content;
     width: max-content;
 }
 
@@ -63,19 +66,23 @@
 }
 
 .edit-details__row_title {
-    font-weight: 500;
+    font-family: var(--main-font-family);
+    font-style: var(--main-font-style);
+    font-weight: var(--main-font-weight500);
     font-size: 13px;
     line-height: 13px;
-    color: #1E1E1E;
+    color: var(--main-color-text);
     margin: 0;
 }
 
 .edit-details__row_input {
-    font-weight: 500;
+    font-family: var(--main-font-family);
+    font-style: var(--main-font-style);
+    font-weight: var(--main-font-weight500);
     font-size: 13px;
     line-height: 13px;
     text-align: right;
-    color: #999999;
+    color: var(--disable-color-text);
     border: none;
     padding: 0;
     margin: 0;
@@ -84,16 +91,17 @@
 }
 
 .edit-details__save-button {
-    font-weight: 500;
+    font-family: var(--main-font-family);
+    font-style: var(--main-font-style);
+    font-weight: var(--main-font-weight500);
     font-size: 13px;
     line-height: 13px;
     text-align: center;
-    color: #FFFFFF;
+    color: var(--white-color-text);
     border: none;
-    background-color: #3369F3;
+    background-color: var(--blue-color-button);
     cursor: pointer;
     border-radius: 8px;
     width: 280px;
     padding: 12px 0;
 }
-

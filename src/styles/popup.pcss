@@ -10,18 +10,20 @@
 .popup__modal {
     display: flex;
     flex-direction: column;
-    background-color: #fff;
+    background-color: var(--main-bg-color);
     box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.14);
     border-radius: 12px;
     padding: 30px 40px;
 }
 
 .popup__title {
-    font-weight: 500;
+    font-family: var(--main-font-family);
+    font-style: var(--main-font-style);
+    font-weight: var(--main-font-weight500);
     font-size: 15px;
     line-height: 20px;
     text-align: center;
-    color: #1E1E1E;
+    color: var(--main-color-text);
     margin-bottom: 50px;
 }
 
@@ -32,19 +34,23 @@
 }
 
 .popup__form_text {
-    font-weight: 500;
+    font-family: var(--main-font-family);
+    font-style: var(--main-font-style);
+    font-weight: var(--main-font-weight500);
     font-size: 9px;
     line-height: 9px;
-    color: #999999;
+    color: var(--disable-color-text);
     margin-bottom: 8px;
     margin-left: 2px;
 }
 
 .popup__input {
-    font-weight: 500;
+    font-family: var(--main-font-family);
+    font-style: var(--main-font-style);
+    font-weight: var(--main-font-weight500);
     font-size: 13px;
     line-height: 13px;
-    color: #1E1E1E;
+    color: var(--main-color-text);
     border: none;
     border-bottom: 1px solid #3369F3;
     outline: 0;
@@ -53,12 +59,14 @@
 }
 
 .popup__button {
-    font-weight: 500;
+    font-family: var(--main-font-family);
+    font-style: var(--main-font-style);
+    font-weight: var(--main-font-weight500);
     font-size: 13px;
     line-height: 13px;
     text-align: center;
-    color: #FFFFFF;
-    background: #3369F3;
+    color: var(--white-color-text);
+    background: var(--blue-color-button);
     border-radius: 8px;
     width: 280px;
     border: none;
@@ -74,21 +82,25 @@
     border: none;
     background-color: transparent;
     cursor: pointer;
-    font-weight: 500;
+    font-family: var(--main-font-family);
+    font-style: var(--main-font-style);
+    font-weight: var(--main-font-weight500);
     font-size: 12px;
     line-height: 16px;
     text-align: center;
     text-decoration-line: underline;
-    color: #3369F3;
+    color: var(--blue-color-button);
     max-width: 118px;
     margin: auto auto 45px;
 }
 
 .popup__error {
     min-height: 12px;
-    font-weight: 500;
+    font-family: var(--main-font-family);
+    font-style: var(--main-font-style);
+    font-weight: var(--main-font-weight500);
     font-size: 11px;
     line-height: 11px;
     text-align: center;
-    color: #FF2F2F;
+    color: var(--error-sub-color-text);
 }

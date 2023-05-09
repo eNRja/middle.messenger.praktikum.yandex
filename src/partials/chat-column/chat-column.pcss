@@ -23,18 +23,22 @@
 }
 
 .chat-column__user {
-    color: #1E1E1E;
+    color: var(--main-color-text);
     margin: 0;
-    font-weight: 600;
+    font-family: var(--main-font-family);
+    font-style: var(--main-font-style);
+    font-weight: var(--main-font-weight600);
     font-size: 13px;
     line-height: 13px;
 }
 
 .chat-column__message {
-    font-weight: 500;
+    font-family: var(--main-font-family);
+    font-style: var(--main-font-style);
+    font-weight: var(--main-font-weight500);
     font-size: 12px;
     line-height: 15px;
-    color: #999999;
+    color: var(--disable-color-text);
     margin: 4px 0 0;
     display: block;
     display: -webkit-box;
@@ -56,10 +60,12 @@
 
 .chat-column__time {
     margin: 0;
-    font-weight: 500;
+    font-family: var(--main-font-family);
+    font-style: var(--main-font-style);
+    font-weight: var(--main-font-weight500);
     font-size: 11px;
     line-height: 12px;
-    color: #999999;
+    color: var(--disable-color-text);
 }
 
 .chat-column__counter {
@@ -68,5 +74,5 @@
     heght: 20px;
     border-radius: 50%;
     text-align: center;
-    color: #fff;
+    color: var(--white-color-text);
 }

@@ -10,7 +10,7 @@
 .login__modal {
     display: flex;
     flex-direction: column;
-    background-color: #fff;
+    background-color: var(--white-color-text);
     box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.14);
     border-radius: 12px;
     padding: 30px 40px;
@@ -18,11 +18,13 @@
 }
 
 .login__title {
-    font-weight: 500;
+    font-family: var(--main-font-family);
+    font-style: var(--main-font-style);
+    font-weight: var(--main-font-weight500);
     font-size: 20px;
     line-height: 20px;
     text-align: center;
-    color: #1E1E1E;
+    color: var(--main-color-text);
     margin-bottom: 40px;
 }
 
@@ -34,10 +36,12 @@
 }
 
 .login__form_text {
-    font-weight: 500;
+    font-family: var(--main-font-family);
+    font-style: var(--main-font-style);
+    font-weight: var(--main-font-weight500);
     font-size: 9px;
     line-height: 9px;
-    color: #999999;
+    color: var(--disable-color-text);
     margin-bottom: 8px;
     margin-left: 2px;
 }
@@ -53,10 +57,12 @@
 }
 
 .login__input {
-    font-weight: 500;
+    font-family: var(--main-font-family);
+    font-style: var(--main-font-style);
+    font-weight: var(--main-font-weight500);
     font-size: 13px;
     line-height: 13px;
-    color: #1E1E1E;
+    color: var(--main-color-text);
     border: none;
     border-bottom: 1px solid #3369F3;
     outline: 0;
@@ -65,19 +71,23 @@
 }
 
 .login__error {
-    font-weight: 400;
+    font-family: var(--main-font-family);
+    font-style: var(--main-font-style);
+    font-weight: var(--main-font-weight400);
     font-size: 8px;
     line-height: 8px;
-    color: #FF2F2F;
+    color: var(--error-sub-color-text);
 }
 
 .login__button {
-    font-weight: 500;
+    font-family: var(--main-font-family);
+    font-style: var(--main-font-style);
+    font-weight: var(--main-font-weight500);
     font-size: 13px;
     line-height: 13px;
     text-align: center;
-    color: #FFFFFF;
-    background: #3369F3;
+    color: var(--white-color-text);
+    background: var(--blue-color-button);
     border-radius: 8px;
     width: 280px;
     border: none;
@@ -90,10 +100,12 @@
 }
 
 .login__reserve_button {
-    font-weight: 500;
+    font-family: var(--main-font-family);
+    font-style: var(--main-font-style);
+    font-weight: var(--main-font-weight500);
     font-size: 11px;
     line-height: 11px;
-    color: #3369F3;
+    color: var(--blue-color-button);
     margin: 14px auto 0;
     text-align: center;
 }
