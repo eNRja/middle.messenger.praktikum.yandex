@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "parcel --no-cache ./src/pages/index.hbs --open http://localhost:1234",
     "build": "parcel build ./src/pages/index.hbs",
-    "start": "parcel build ./src/pages/index.hbs && node ./server.js",
+    "start": "parcel build ./src/pages/*.hbs && node ./server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
