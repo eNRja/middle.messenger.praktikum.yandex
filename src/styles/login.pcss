@@ -1,0 +1,115 @@
+.login {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+.login__modal {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white-color-text);
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.14);
+    border-radius: 12px;
+    padding: 30px 40px;
+    min-height: 450px
+}
+
+.login__title {
+    font-family: var(--main-font-family);
+    font-style: var(--main-font-style);
+    font-weight: var(--main-font-weight500);
+    font-size: 20px;
+    line-height: 20px;
+    text-align: center;
+    color: var(--main-color-text);
+    margin-bottom: 40px;
+}
+
+.login__form {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-grow: 1;
+}
+
+.login__form_text {
+    font-family: var(--main-font-family);
+    font-style: var(--main-font-style);
+    font-weight: var(--main-font-weight500);
+    font-size: 9px;
+    line-height: 9px;
+    color: var(--disable-color-text);
+    margin-bottom: 8px;
+    margin-left: 2px;
+}
+
+.login__input-block {
+    display: flex;
+    flex-direction: column;
+    height: 38px;
+}
+
+.login__input-block:last-child {
+    margin-bottom: 45px;
+}
+
+.login__input {
+    font-family: var(--main-font-family);
+    font-style: var(--main-font-style);
+    font-weight: var(--main-font-weight500);
+    font-size: 13px;
+    line-height: 13px;
+    color: var(--main-color-text);
+    border: none;
+    border-bottom: 1px solid #3369F3;
+    outline: 0;
+    width: 280px;
+    margin-bottom: 5px;
+}
+
+.login__error {
+    font-family: var(--main-font-family);
+    font-style: var(--main-font-style);
+    font-weight: var(--main-font-weight400);
+    font-size: 8px;
+    line-height: 8px;
+    color: var(--error-sub-color-text);
+}
+
+.login__button {
+    font-family: var(--main-font-family);
+    font-style: var(--main-font-style);
+    font-weight: var(--main-font-weight500);
+    font-size: 13px;
+    line-height: 13px;
+    text-align: center;
+    color: var(--white-color-text);
+    background: var(--blue-color-button);
+    border-radius: 8px;
+    width: 280px;
+    border: none;
+    padding: 12px 0;
+    margin: auto auto 0;
+}
+
+.login__button:hover {
+    cursor: pointer;
+}
+
+.login__reserve_button {
+    font-family: var(--main-font-family);
+    font-style: var(--main-font-style);
+    font-weight: var(--main-font-weight500);
+    font-size: 11px;
+    line-height: 11px;
+    color: var(--blue-color-button);
+    margin: 14px auto 0;
+    text-align: center;
+}
+
+.login__reserve_button:hover {
+    cursor: pointer;
+}

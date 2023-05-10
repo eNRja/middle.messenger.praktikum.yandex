@@ -1,0 +1,87 @@
+.list-column {
+    display: flex;
+    min-width: 310px;
+    flex-direction: column;
+    padding: 10px;
+    border-right: 2px solid #EAEAEA;
+    color: var(--text-color);
+    background-color: var(--main-color);
+    &__title {
+        font-size: 48px;
+        padding: 15px 0;
+    }
+    &__text {
+        font-size: 24px;
+        padding: 15px 0;
+    }
+}
+
+.list-column__font_grey {
+    margin-bottom: 23px;
+    text-align: right;
+}
+
+.list-column__font_grey a {
+    text-decoration: none;
+    color: var(--disable-color-text);
+}
+
+.list-column__font_grey:visited {
+  color: var(--disable-color-text);
+  text-decoration: none;
+}
+
+.list-column__form {
+    display: flex;
+    justify-content: center;
+    background-color:#EFEFEF;
+    width: 100%;
+    height: 32px;
+    border-radius: 5px;
+    margin-bottom: 14px;
+}
+
+.list-column__input {
+    align-self: center;
+    text-align: center;
+    background: none;
+    border: none;
+    background-image: url(../../asserts/Union.png);   
+    background-repeat: no-repeat; 
+    background-position: 54px; 
+    outline: none;
+    padding-left: 20px;
+    height: 20px; /*высота строки ввода*/   
+    font-size: 13px; /*размер шрифта*/
+    color: var(--disable-color-text);
+    width: auto;
+}
+
+.list-column__input_image {
+    height: 10px;
+    width: 15px;
+}
+
+.test {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.test li {
+    list-style: none;
+    border: none;
+    margin-bottom: 5px;
+}
+
+.test ul {
+    padding: 0;
+    list-style: none;
+}
+
+.test a {
+    text-decoration: none;
+    color: blue;
+}

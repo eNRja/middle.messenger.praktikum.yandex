@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles/styles.pcss">
+</head>
+
+<body>
+    <main class="profile">
+        <nav class="profile__back_button">
+            <a href="./"></a>
+        </nav>
+        <div class="profile__container">
+            <div class="profile__avatar-container">
+                <img class="profile__avatar" src="../asserts/avatar_default.svg" alt="avatar">
+                <p class="profile__avatar-overlay">Change avatar</p>
+                <h2 class="profile__name">Ivan</h2>
+            </div>
+            <ul class="profile__info">
+                <li class="profile__row">
+                    <label class="profile__row_title">Email</label>
+                    <input class="profile__row_input" name="email" type="email" value="example@yandex.ru">
+                </li>
+                <li class="profile__row">
+                    <label class="profile__row_title">Login</label>
+                    <input class="profile__row_input" name="login" type="text" value="IvanovIvan">
+                </li>
+                <li class="profile__row">
+                    <label class="profile__row_title">Name</label>
+                    <input class="profile__row_input" name="first_name" type="text" value="Ivan">
+                </li>
+                <li class="profile__row">
+                    <label class="profile__row_title">Surname</label>
+                    <input class="profile__row_input" name="second_name" type="text" value="Ivanov">
+                </li>
+                <li class="profile__row">
+                    <label class="profile__row_title">Nickname</label>
+                    <input class="profile__row_input" name="display_name" type="text" value="Ivan">
+                </li>
+                <li class="profile__row">
+                    <label class="profile__row_title">Telephone number</label>
+                    <input class="profile__row_input" name="phone" type="text" value="+7 (903) 777 77 77">
+                </li>
+            </ul>
+            <nav class="profile__container_buttons">
+                <ul>
+                    <li class="profile__row">
+                        <a class="profile__button" href="./edit-details.hbs">Edit details</a>
+                    </li>
+                    <li class="profile__row">
+                        <a class="profile__button" href="./edit-password.hbs">Edit password</a>
+                    </li>
+                    <li>
+                        <a class="profile__button profile__button_log-out" href="./">Log out</a>
+                    </li>
+                </ul>
+
+            </nav>
+        </div>
+    </main>
+</body>
+
+</html>
