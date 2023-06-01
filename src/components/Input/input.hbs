@@ -1,0 +1,24 @@
+<label class="{{classLabel}}">
+  {{label}}
+  {{#if disabled}}
+    <input
+      name={{name}}
+      type={{type}}
+      value="{{value}}"
+      class="{{classInput}}"
+      placeholder="{{placeholder}}"
+      disabled
+    />
+  {{else}}
+    <input
+      name={{name}}
+      type={{type}}
+      value="{{value}}"
+      class="{{classInput}}"
+      placeholder="{{placeholder}}"
+    />
+  {{/if}}
+
+  <p class="input_error">{{error}}</p>
+
+</label>

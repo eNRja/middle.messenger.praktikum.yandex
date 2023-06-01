@@ -1,0 +1,81 @@
+.edit-details {
+  display: flex;
+  height: 100vh;
+  background-color: var(--main-bg-color);
+}
+
+.edit-details__back_button {
+  display: flex;
+  height: 100%;
+  width: 64px;
+  background-color: var(--main-color);
+  background-image: url(../../asserts/send_button.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: rotate(180deg);
+  transition: 0.4s;
+  border: none;
+  border-left: 1px solid #eaeaea;
+}
+
+.edit-details__back_button a {
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.edit-details__back_button:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.edit-details__back_button a {
+  height: 100%;
+  width: 100%;
+}
+
+.edit-details__container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.edit-details__avatar {
+  height: 130px;
+  width: 130px;
+  background: #efefef;
+  border-radius: 50%;
+  background-size: cover;
+}
+
+.edit-details__name {
+  text-align: center;
+}
+
+.edit-details__row {
+  display: flex;
+  border-bottom: 1px solid #eaeaea;
+  width: 510px;
+  padding: 10px 0;
+}
+
+.edit-details__save-button {
+  font-family: var(--main-font-family);
+  font-style: var(--main-font-style);
+  font-weight: var(--main-font-weight500);
+  font-size: 13px;
+  line-height: 13px;
+  text-align: center;
+  color: var(--white-color-text);
+  border: none;
+  background-color: var(--blue-color-button);
+  cursor: pointer;
+  border-radius: 8px;
+  width: 280px;
+  padding: 12px 0;
+}

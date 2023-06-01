@@ -1,0 +1,1 @@
+export { ChatColumn as default } from "./chat-column";
