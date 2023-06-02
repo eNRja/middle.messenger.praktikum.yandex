@@ -11,13 +11,13 @@ class Block {
   };
 
   public id = nanoid(6);
-  protected props: any;
-  protected state: any;
+  protected props: Record<string, unknown>;
+  protected state: Record<string, Block | Block[]>;
   public children: Record<string, Block>;
   private eventBus: () => EventBus;
   private _element: HTMLElement | null = null;
   protected refs: { [key: string]: HTMLElement } = {};
-  private _meta: { props: any };
+  private _meta: { props: Record<string, unknown> | null };
 
   /** JSDoc
    * @param {string} tagName
@@ -132,6 +132,8 @@ class Block {
   private _render() {
     const fragment = this.render();
 
+    this._removeEvents();
+
     const newElement = fragment.firstElementChild as HTMLElement;
     this._element!.replaceWith(newElement);
     this._element = newElement;
@@ -185,6 +187,20 @@ class Block {
     return new DocumentFragment();
   }
 
+  private _removeEvents() {
+    const { events } = this.props as {
+      events?: Record<string, () => void>;
+    };
+
+    if (!events || !this._element) {
+      return;
+    }
+
+    Object.keys(events).forEach((eventName) => {
+      this._element!.addEventListener(eventName, events[eventName]);
+    });
+  }
+
   getContent() {
     return this.element!;
   }
@@ -201,7 +217,7 @@ class Block {
       set(target, prop: string, value) {
         const oldTarget = { ...target };
 
-        target[prop as keyof P] = value;
+        target[prop] = value;
 
         // Запускаем обновление компоненты
         // Плохой cloneDeep, в следующей итерации нужно заставлять добавлять cloneDeep им самим

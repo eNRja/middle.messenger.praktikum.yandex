@@ -1,4 +1,4 @@
-import { Input, InputProps } from "../../components/Input/input";
+import { Input } from "../../components/Input/input";
 import Link from "../../components/Link";
 import Image from "../../components/Image";
 import Block from "../../utils/Block";
@@ -14,10 +14,6 @@ export class ProfilePage extends Block {
   }
 
   protected init(): void {
-    this.children.fields = this.props.inputs.map(
-      (props: InputProps) => new Input(props)
-    );
-
     this.children.backButton = new Link({
       href: "./",
       label: "",
@@ -85,7 +81,7 @@ export class ProfilePage extends Block {
     this.children.inputNickName = new Input({
       classInput: "row_input",
       classLabel: "row_title",
-      name: "chat_name",
+      name: "display_name",
       type: "text",
       label: "NickName",
       disabled: true,

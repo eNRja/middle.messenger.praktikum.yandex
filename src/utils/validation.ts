@@ -49,7 +49,7 @@ const validationInputs: Record<string, Patterns> = {
     errorMessage: "Shouldn't be empty",
   },
 
-  chat_name: {
+  display_name: {
     regExp: /^[А-ЯA-Z]{1}[а-яa-z-]*$/,
     errorMessage: "First capital letter, no gaps and numbers",
   },

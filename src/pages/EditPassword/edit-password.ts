@@ -1,5 +1,5 @@
 import { Button } from "../../components/Button";
-import { Input, InputProps } from "../../components/Input/input";
+import Input from "../../components/Input";
 import Link from "../../components/Link";
 import Image from "../../components/Image";
 import Block from "../../utils/Block";
@@ -15,10 +15,6 @@ export class EditPasswordPage extends Block {
   }
 
   protected init(): void {
-    this.children.fields = this.props.inputs.map(
-      (props: InputProps) => new Input(props)
-    );
-
     this.children.backButton = new Link({
       href: "./",
       label: "",
@@ -35,7 +31,7 @@ export class EditPasswordPage extends Block {
       label: "Old password",
       placeholder: "example",
       error: "",
-      value: this.props.login,
+      value: "",
       events: {
         focusin,
         focusout,
@@ -49,7 +45,7 @@ export class EditPasswordPage extends Block {
       label: "New password",
       placeholder: "example",
       error: "",
-      value: this.props.login,
+      value: "",
       events: {
         focusin,
         focusout,
@@ -63,7 +59,7 @@ export class EditPasswordPage extends Block {
       label: "New password again",
       placeholder: "example",
       error: "",
-      value: this.props.login,
+      value: "",
       events: {
         focusin,
         focusout,
