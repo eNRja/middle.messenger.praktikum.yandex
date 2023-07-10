@@ -1,4 +1,4 @@
-import Block from "../../utils/Block";
+import Block from "../../core/Block";
 import template from "./image.hbs";
 
 interface ImageProps {
@@ -6,8 +6,6 @@ interface ImageProps {
   class?: string;
   alt: string;
   name?: string;
-  width?: string;
-  height?: string;
   events?: Record<string, (e: MouseEvent) => void>;
 }
 

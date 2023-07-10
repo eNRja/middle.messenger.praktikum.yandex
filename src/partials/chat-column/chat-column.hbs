@@ -1,13 +1,17 @@
-<a href="#" class="chat-column">
+{{#if active}}
+<li class="chat-column chat-column_selected" id={{id}}>
+{{else}}
+<li class="chat-column" id={{id}}>
+{{/if}}
   {{{imageAvatar}}}
-  {{!-- <img class="chat-column__image" src="../asserts/Ellipse.png" alt="default" /> --}}
   <div class="chat-column__text">
-    <p class="chat-column__user">Alexey</p>
-    <p class="chat-column__message">Some text, what do you want? Do you want to
-      learn JavaScript? What if text so long and you want to discuss some?</p>
+    <p class="chat-column__user">{{title}}</p>
+    <p class="chat-column__message">{{isYou}}{{last_message}}</p>
   </div>
   <div class="chat-column__time-zone">
-    <p class="chat-column__time">10:49</p>
-    <span class="chat-column__counter">2</span>
+    <p class="chat-column__time">{{time}}</p>
+    {{#if unread_count}}
+    <span class="chat-column__counter">{{unread_count}}</span>
+    {{/if}}
   </div>
-</a>
+</li>

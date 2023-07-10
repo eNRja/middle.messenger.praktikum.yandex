@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  max-height: 100vh;
   padding: 10px 20px;
 }
 
@@ -14,7 +15,15 @@
 .user-chat__header_avatar {
   width: 34px;
   height: 34px;
+  border-radius: 50%;
   margin: auto 10px auto 0;
+  object-fit: cover;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.user-chat__header_avatar:hover {
+  opacity: 0.7;
 }
 
 .user-chat__header_name {
@@ -103,99 +112,10 @@
   background-color: rgba(245, 245, 245, 0.1);
 }
 
-.user-chat__section {
-  display: flex;
-  flex-direction: column;
+.user-chat__messages {
   margin: auto 0 0;
-}
-
-.user-chat__section_date {
-  font-family: var(--main-font-family);
-  font-style: var(--main-font-style);
-  font-weight: var(--main-font-weight500);
-  font-size: 12px;
-  line-height: 12px;
-  color: var(--disable-color-text);
-  text-align: center;
-}
-
-.user-chat__section_opponent {
-  display: flex;
-  font-family: var(--main-font-family);
-  font-style: var(--main-font-style);
-  font-weight: var(--main-font-weight500);
-  font-size: 12px;
-  line-height: 18px;
-  color: var(--main-color-text);
-  margin-left: 10px;
-  margin-right: auto;
-  margin-bottom: 20px;
-  max-width: 50%;
-  background: #f8f8f8;
-  border-radius: 15px;
-  padding: 6px 12px;
-}
-
-.user-chat__section_opponent_image {
-  margin-left: 10px;
-  display: flex;
-  position: relative;
-  max-width: 50%;
-  margin-left: 10px;
-  margin-right: auto;
-  margin-bottom: 20px;
-}
-
-.user-chat__section_opponent_image-time {
-  padding: 2px 6px;
-  position: absolute;
-  background: rgba(82, 82, 82, 0.5);
-  border-radius: 30px;
-  font-family: var(--main-font-family);
-  font-style: var(--main-font-style);
-  font-weight: var(--main-font-weight400);
-  font-size: 9px;
-  line-height: 9px;
-  color: var(--white-color-text);
-  text-align: right;
-  right: 12px;
-  bottom: 12px;
-}
-
-.user-chat__section_user {
-  display: flex;
-  font-family: var(--main-font-family);
-  font-style: var(--main-font-style);
-  font-weight: var(--main-font-weight500);
-  font-size: 12px;
-  line-height: 18px;
-  color: var(--main-color-text);
-  margin: 0 10px 20px auto;
-  max-width: 50%;
-  background: #e4edfd;
-  border-radius: 15px;
-  padding: 6px 12px;
-}
-
-.user-chat__section_opponent_time {
-  font-family: var(--main-font-family);
-  font-style: var(--main-font-style);
-  font-weight: var(--main-font-weight500);
-  font-size: 9px;
-  line-height: 9px;
-  color: var(--disable-color-text);
-  text-align: right;
-  margin: auto 0 0 auto;
-  padding-left: 15px;
-}
-
-.user-chat__section_user-delivery {
-  margin: auto 0 0 auto;
-  padding-left: 15px;
-  font-size: 9px;
-  line-height: 9px;
-  text-align: right;
-  color: #3369f3;
+  max-height: 100%;
+  overflow-y: scroll;
 }
 
 .user-chat__footer {

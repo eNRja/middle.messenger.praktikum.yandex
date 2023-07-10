@@ -1,49 +1,114 @@
 import Input from "../../components/Input";
-import Block from "../../utils/Block";
+import Block from "../../core/Block";
 import template from "./user-chat.hbs";
 import Image from "../../components/Image";
 import imgEllipse from "../../asserts/Ellipse.png";
 import imgAdd from "../../asserts/add.svg";
 import imgDelete from "../../asserts/delete.svg";
-import imgTest from "../../asserts/test_picture.png";
-import imgDeliveryMessage from "../../asserts/delivery_message.png";
 import imgVideo from "../../asserts/photo_video.svg";
 import imgFile from "../../asserts/file.svg";
 import imgLocation from "../../asserts/location.svg";
 import { Button } from "../../components/Button";
-import { focusin, focusout, submit } from "../../utils/validation";
+import { sendMessage } from "../../utils/validation";
+import { API_RESOURCES_PATH } from "../../utils/constants";
+import PopupBtn from "../../components/popupBtn";
+import { store } from "../../core/store";
+import { closeModalHandler, getTime, openModal, prettyDate } from "../../utils/handlers";
+import Message from "../messages";
+import { IChatMessage } from "../../types";
 
 interface UserChatProps {}
 
 export class UserChat extends Block {
+  private chatsUpdateInterval: number;
   constructor(props: UserChatProps) {
     super(props);
+
+    this.chatsUpdateInterval = 0;
   }
 
   init() {
-    //Images
+    const messages = store.state.messages[store.state.activeChat.id];
+
+    this.props.chatName = store.state.activeChat.title;
+    this.props.noMessages = messages === undefined ? true : false;
+
+    const avatar = store.state.user && store.state.user.avatar;
+    const srcImage = avatar ? API_RESOURCES_PATH + avatar : imgEllipse;
+
+    if (messages !== undefined) {
+      this.children.messages = messages.map(
+        (item: IChatMessage) =>
+          new Message({
+            chatId: item.chatId,
+            content: item.content,
+            file: item.file,
+            id: item.id,
+            isRead: item.isRead,
+            time: getTime(item.time),
+            date: prettyDate(item.time),
+            type: item.type,
+            userId: item.userId,
+          })
+      );
+    }
+
     this.children.imageAvatar = new Image({
       class: "user-chat__header_avatar",
-      srcImg: imgEllipse,
+      srcImg: srcImage,
       alt: "avatar",
-      name: "avatar",
+      events: {
+        click: () =>
+          openModal({
+            title: "Change chat avatar",
+            action: closeModalHandler,
+            changeChatAvatarBool: true,
+          }),
+      },
     });
-    this.children.imageAdd = new Image({
-      srcImg: imgAdd,
+    this.children.addUser = new PopupBtn({
+      title: "Add user",
+      src: imgAdd,
       alt: "add",
+      divClass: "popup-btn",
+      events: {
+        click: () =>
+          openModal({
+            title: "Add user",
+            action: closeModalHandler,
+            addUserBool: true,
+          }),
+      },
     });
-    this.children.imageDelete = new Image({
-      srcImg: imgDelete,
+    this.children.deleteUser = new PopupBtn({
+      title: "Delete user",
+      src: imgDelete,
       alt: "delete",
+      divClass: "popup-btn",
+      events: {
+        click: () =>
+          openModal({
+            title: "Delete user",
+            action: closeModalHandler,
+            deleteUserBool: true,
+          }),
+      },
     });
-    this.children.imageTest = new Image({
-      srcImg: imgTest,
-      alt: "test",
+    this.children.deleteChat = new PopupBtn({
+      title: "Delete chat",
+      src: imgDelete,
+      alt: "delete",
+      divClass: "popup-btn",
+      events: {
+        click: () =>
+          openModal({
+            title: "Delete chat",
+            action: closeModalHandler,
+            deleteChatBool: true,
+          }),
+      },
     });
-    this.children.imageDeliveryMessage = new Image({
-      srcImg: imgDeliveryMessage,
-      alt: "delivery_message",
-    });
+
     this.children.imageVideo = new Image({
       srcImg: imgVideo,
       alt: "video",
@@ -66,34 +131,21 @@ export class UserChat extends Block {
       error: "",
       type: "text",
       placeholder: "Write a message...",
-      events: {
-        focusin,
-        focusout,
-      },
+      events: {},
     });
-    // this.children.inputMessage = new Input({
-    //   classInput: "input",
-    //   classLabel: "form_text",
-    //   name: "login",
-    //   type: "text",
-    //   label: "login",
-    //   placeholder: "example",
-    //   error: "",
-    //   value: this.props.message,
-    //   events: {
-    //     focusin,
-    //     focusout,
-    //   },
-    // });
     this.children.sendButton = new Button({
       label: "",
       classButton: "user-chat__footer_send-button",
       typeButton: "submit",
-      events: { click: submit },
+      events: {
+        click: (event) => {
+          sendMessage({ event, chatId: store.state.activeChat.id });
+        },
+      },
     });
   }
 
   render() {
-    return this.compile(template, this.props);
+    return this.compile(template, { ...this.props });
   }
 }

@@ -1,9 +1,21 @@
 .chat-column {
   display: flex;
   border-top: 1px solid #eaeaea;
-  padding: 12px 0;
-  border-top: 1px solid #eaeaea;
+  padding: 6px 15px 6px 0;
   text-decoration: none;
+  cursor: pointer;
+}
+
+.chat-column:hover {
+  background: #f5f5f5;
+}
+
+.chat-column_selected {
+  background: #ededfd;
+}
+
+.chat-column_selected:hover {
+  background: #ededfd;
 }
 
 .chat-column:last-child {
@@ -70,9 +82,9 @@
 
 .chat-column__counter {
   background: #3369f3;
-  width: 20px;
-  heght: 20px;
   border-radius: 50%;
   text-align: center;
   color: var(--white-color-text);
+  margin: auto;
+  padding: 2px 8px;
 }

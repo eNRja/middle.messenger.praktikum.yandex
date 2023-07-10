@@ -1,15 +1,35 @@
 <label class="{{classLabel}}">
-  {{label}}
-  {{#if disabled}}
-    <input
-      name={{name}}
-      type={{type}}
-      value="{{value}}"
-      class="{{classInput}}"
-      placeholder="{{placeholder}}"
-      disabled
-    />
+
+  {{#if file}}
+
+    {{label}}
+
+    {{#if disabled}}
+
+      <input
+        name={{name}}
+        type={{type}}
+        value="{{value}}"
+        class="{{classInput}}"
+        placeholder="{{placeholder}}"
+        disabled
+      />
+
+    {{else}}
+
+      <input
+        id="{{id}}"
+        name={{name}}
+        type={{type}}
+        value="{{value}}"
+        class="{{classInput}}"
+        placeholder="{{placeholder}}"
+      />
+
+    {{/if}}
   {{else}}
+
+    {{fileLabel}}
     <input
       name={{name}}
       type={{type}}
@@ -17,8 +37,8 @@
       class="{{classInput}}"
       placeholder="{{placeholder}}"
     />
+
   {{/if}}
 
   <p class="input_error">{{error}}</p>
-
 </label>
