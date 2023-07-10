@@ -1,0 +1,25 @@
+<div class="message">
+  {{#if id}}
+    <p class="message_date">{{date}}</p>
+  {{/if}}
+  {{#if user}}
+    <div class="message_user">
+      <span>{{content}}</span>
+      <div class="message_user-delivery">
+        {{#if isRead}}
+          {{{imageDeliveryMessage}}}
+        {{else}}
+          <div></div>
+        {{/if}}
+        <span>{{time}}</span>
+      </div>
+    </div>
+  {{else}}
+    <div class="message_opponent">
+      <span>
+        {{content}}
+        <p class="message_opponent_time">{{time}}</p>
+      </span>
+    </div>
+  {{/if}}
+</div>

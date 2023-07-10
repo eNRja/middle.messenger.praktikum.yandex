@@ -4,13 +4,16 @@
 @import "../partials/list-column/list-column.pcss";
 @import "../partials/chat-column/chat-column.pcss";
 @import "../partials/user-chat/user-chat.pcss";
-@import "./popup.pcss";
+@import "../partials/messages/messages.pcss";
 @import "../pages/Profile/profile.pcss";
 @import "../pages/Login/login.pcss";
 @import "../pages/Registration/registration.pcss";
 @import "../pages/EditDetails/edit-details.pcss";
 @import "../pages/EditPassword/edit-password.pcss";
 @import "../pages/Error/error.pcss";
+@import "../components/popupBtn/popupBtn.pcss";
+@import "../components/Modal/modal.pcss";
+
 
 body {
   margin: 0;
@@ -20,6 +23,30 @@ body {
   display: flex;
   height: 100vh;
   background-color: var(--main-bg-color);
+}
+
+.home-page__default {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  cursor: default;
+}
+
+.home-page__default p {
+  font-family: var(--main-font-family);
+  font-style: var(--main-font-style);
+  font-weight: var(--main-font-weight500);
+  font-size: 16px;
+  line-height: 16px;
+  color: var(--disable-color-text);
+  padding: 8px 14px;
+  margin: 0;
+  text-align: center;
+  background: #F5F5F5;
+  border-radius: 24px;
 }
 
 .home-page_text {
@@ -103,6 +130,7 @@ body {
   float: right;
   outline: 0;
   flex-grow: 1;
+  background: none;
 }
 
 .save-button {
@@ -147,4 +175,11 @@ body {
   border: none;
   background-color: transparent;
   cursor: pointer;
+}
+
+.profile_avatar {
+  border-radius: 50%;
+  height: 130px;
+  width: 130px;
+  object-fit: cover;
 }
