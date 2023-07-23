@@ -4,8 +4,7 @@
   "description": "",
   "scripts": {
     "dev": "parcel --no-cache ./src/index.html  --open  --port 3000",
-    "build": "parcel build ./src/index.html",
-    "start": "npm run build && node ./server.js",
+    "start": "parcel build ./src/index.html && node ./server.js",
     "eslint": "eslint src/**/*.ts",
     "stylelint": "stylelint src/**/*.{pcss}"
   },
