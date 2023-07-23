@@ -23,7 +23,7 @@ export class EditPasswordPage extends Block {
 
   protected init(): void {
     const value = store.state.user;
-    const srcImage = value && value.avatar ? value.avatar : imgAvatar;
+    const srcImage = value && value.avatar ? API_RESOURCES_PATH + value.avatar : imgAvatar;
 
     this.children.title = new Title({
       titleName: value?.first_name,
@@ -33,7 +33,7 @@ export class EditPasswordPage extends Block {
       label: "",
     });
     this.children.imageAvatar = new Image({
-      srcImg: API_RESOURCES_PATH + srcImage,
+      srcImg: srcImage,
       alt: "avatar",
       class: "profile_avatar",
     });

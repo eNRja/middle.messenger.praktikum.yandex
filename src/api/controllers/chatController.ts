@@ -142,7 +142,6 @@ export class ChatController {
   }
 
   static async changeChatAvatar(data: FormData) {
-    console.log(data);
     return chatAPI
       .postChatAvatar(data)
       .then((response) => {

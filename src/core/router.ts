@@ -18,62 +18,64 @@ export const router = new Router("#app");
 export function initRouter(store: Store<AppState>) {
   router
     .use({
-      pathname: "/login",
+      pathname: "/",
       block: LoginPage,
-      redirectPath: "",
+      redirectPath: "/messenger",
+      onUnautorized: () => Boolean(store.getState().user),
+      isSecure: true,
     })
     .use({
-      pathname: "/registration",
+      pathname: "/sign-up",
       block: RegistrationPage,
       redirectPath: "",
     })
     .use({
-      pathname: "/",
+      pathname: "/messenger",
       block: HomePage,
       needAuth: true,
-      redirectPath: "/login",
+      redirectPath: "/",
       onUnautorized: () => Boolean(store.getState().user),
     })
     .use({
-      pathname: "/profile",
+      pathname: "/settings",
       block: ProfilePage,
       needAuth: true,
-      redirectPath: "/login",
+      redirectPath: "/",
       onUnautorized: () => Boolean(store.getState().user),
     })
     .use({
-      pathname: "/edit-details",
+      pathname: "/settings/edit",
       block: EditDetailsPage,
       needAuth: true,
-      redirectPath: "/login",
+      redirectPath: "/",
       onUnautorized: () => Boolean(store.getState().user),
     })
     .use({
-      pathname: "/edit-password",
+      pathname: "/settings/password",
       block: EditPasswordPage,
       needAuth: true,
-      redirectPath: "/login",
+      redirectPath: "/",
       onUnautorized: () => Boolean(store.getState().user),
     })
     .use({
       pathname: "/add-user",
       block: AddUserPage,
       needAuth: true,
-      redirectPath: "/login",
+      redirectPath: "/",
       onUnautorized: () => Boolean(store.getState().user),
     })
     .use({
       pathname: "/delete-user",
       block: DeleteUserPage,
       needAuth: true,
-      redirectPath: "/login",
+      redirectPath: "/",
       onUnautorized: () => Boolean(store.getState().user),
     })
     .use({
       pathname: "/load-file",
       block: LoadFilePage,
       needAuth: true,
-      redirectPath: "/login",
+      redirectPath: "/",
       onUnautorized: () => Boolean(store.getState().user),
     })
     .use({

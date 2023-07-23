@@ -36,13 +36,14 @@ class ProfilePage extends Block {
   }
 
   protected init(): void {
+    const value = store.state.user;
+    const srcImage =
+      value && value.avatar ? API_RESOURCES_PATH + value.avatar : imgAvatar;
+
     this.children.backButton = new Link({
       href: ROUTES.home.path,
       label: "",
     });
-    const value = store.state.user;
-    const srcImage = value && value.avatar ? value.avatar : imgAvatar;
-
     this.children.title = new Title({
       titleName: value?.first_name,
     });
@@ -51,7 +52,7 @@ class ProfilePage extends Block {
       label: "",
     });
     this.children.imageAvatar = new Image({
-      srcImg: API_RESOURCES_PATH + srcImage,
+      srcImg: srcImage,
       alt: "avatar",
       class: "profile_avatar",
     });
@@ -154,12 +155,12 @@ class ProfilePage extends Block {
     });
 
     this.children.editDetailsLink = new Link({
-      href: "./edit-details",
+      href: "./settings/edit",
       label: "Edit details",
       className: "profile__button",
     });
     this.children.editPasswordLink = new Link({
-      href: "./edit-password",
+      href: "./settings/password",
       label: "Edit password",
       className: "profile__button",
     });

@@ -49,6 +49,7 @@ export class Modal extends Block {
           submitFile({
             event,
             handler: ChatController.changeChatAvatar,
+            chatId: `${store.state.activeChat.id}`,
           });
         },
       },

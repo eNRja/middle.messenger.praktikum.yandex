@@ -1,6 +1,6 @@
 import { store } from "../../core/store";
 import { MessageDTO } from "../../types";
-import { Message, transformMessages } from "../../utils/apiTransformers";
+import { transformMessages } from "../../utils/apiTransformers";
 import {
   WSEvents,
   WS_BASE_URL,

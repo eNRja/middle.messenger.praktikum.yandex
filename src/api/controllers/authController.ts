@@ -1,5 +1,5 @@
 import { router } from "../../core/router";
-import { store } from "../../core/store";
+import { defaultState, store } from "../../core/store";
 import { TSignUpData } from "../../types";
 import { ROUTES } from "../../utils/constants";
 import { AuthAPI } from "../authApi";
@@ -32,7 +32,7 @@ export class AuthController {
     try {
       const result = await authAPI.signIn(data);
       if (result.status === 200) {
-        AuthController.getInfo();
+        await AuthController.getInfo();
         return result;
       }
     } catch (error) {
@@ -56,17 +56,15 @@ export class AuthController {
   }
 
   static async logout() {
-    return authAPI
-      .logout()
-      .then(() => {
+    try {
+      const result = await authAPI.logout();
+      if (result.status === 200) {
+        store.dispatch(defaultState);
         router.go(ROUTES.login.path);
-        const { user } = store.getState();
-        if (user) {
-          store.clear();
-        }
-      })
-      .catch((error) => {
-        return error;
-      });
+        return;
+      }
+    } catch (error) {
+      return error;
+    }
   }
 }

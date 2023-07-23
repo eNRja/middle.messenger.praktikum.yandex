@@ -127,7 +127,7 @@ class RegistrationPage extends Block {
       },
     });
     this.children.loginLink = new Link({
-      href: "./login",
+      href: "./",
       label: "Have an account?",
     });
   }

@@ -1,5 +1,6 @@
 import Block from "../Block";
 import renderDOM from "../renderDom";
+import { store } from "../store";
 
 function isEqual(lhs: any, rhs: any) {
   return lhs === rhs;
@@ -17,6 +18,7 @@ export default class Route {
   private _props: IRouterProps;
   private _componentProps: any;
   private _needAuth: boolean;
+  private _isSecure: boolean;
   private _onUnautorized: any;
   private _redirect: () => void;
 
@@ -26,6 +28,7 @@ export default class Route {
     props: IRouterProps,
     componentProps: any,
     needAuth: boolean,
+    isSecure: boolean,
     onUnautorized: boolean,
     redirect: () => void
   ) {
@@ -33,6 +36,7 @@ export default class Route {
     this._blockClass = view;
     this._props = props;
     this._needAuth = needAuth;
+    this._isSecure = isSecure;
     this._onUnautorized = onUnautorized;
     this._componentProps = componentProps;
     this._redirect = redirect;
@@ -66,7 +70,13 @@ export default class Route {
   }
 
   render() {
-    if (this.checkAuth()) {
+    if (this._isSecure) {
+      if (store.state.user) {
+        this._redirect();
+        return;
+      }
+    }
+    if (this.checkAuth() && true) {
       // @ts-ignore
       this._block = new this._blockClass({
         ...this._componentProps,

@@ -13,18 +13,20 @@ import { sendMessage } from "../../utils/validation";
 import { API_RESOURCES_PATH } from "../../utils/constants";
 import PopupBtn from "../../components/popupBtn";
 import { store } from "../../core/store";
-import { closeModalHandler, getTime, openModal, prettyDate } from "../../utils/handlers";
+import {
+  closeModalHandler,
+  getTime,
+  openModal,
+  prettyDate,
+} from "../../utils/handlers";
 import Message from "../messages";
 import { IChatMessage } from "../../types";
 
 interface UserChatProps {}
 
 export class UserChat extends Block {
-  private chatsUpdateInterval: number;
   constructor(props: UserChatProps) {
     super(props);
-
-    this.chatsUpdateInterval = 0;
   }
 
   init() {
@@ -33,7 +35,7 @@ export class UserChat extends Block {
     this.props.chatName = store.state.activeChat.title;
     this.props.noMessages = messages === undefined ? true : false;
 
-    const avatar = store.state.user && store.state.user.avatar;
+    const avatar = store.state.activeChat && store.state.activeChat.avatar;
     const srcImage = avatar ? API_RESOURCES_PATH + avatar : imgEllipse;
 
     if (messages !== undefined) {
@@ -140,6 +142,9 @@ export class UserChat extends Block {
       events: {
         click: (event) => {
           sendMessage({ event, chatId: store.state.activeChat.id });
+          const elem = document.querySelectorAll(".message");
+          const last = elem[elem.length - 1];
+          last && last.scrollIntoView();
         },
       },
     });

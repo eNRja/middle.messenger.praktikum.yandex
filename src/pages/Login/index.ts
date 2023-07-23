@@ -59,7 +59,7 @@ class LoginPage extends Block {
       },
     });
     this.children.registrationLink = new Link({
-      href: "./registration",
+      href: "./sign-up",
       label: "Have no account?",
     });
   }

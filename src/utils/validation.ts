@@ -3,6 +3,7 @@ import { ROUTES } from "./constants";
 import { closeModalHandler } from "./handlers";
 import WebSocketController from "../api/controllers/webSocketController";
 import { ChatController } from "../api/controllers/chatController";
+import { store } from "../core/store";
 
 interface Patterns {
   regExp: RegExp;
@@ -133,7 +134,6 @@ export const submit = async (params: {
   const result = await handler(data);
   if (result.status === 200) {
     if (action) {
-      console.log("GO?", action);
       action();
     }
   } else if (result.status > 404) {
@@ -147,19 +147,23 @@ export const submitFile = async (params: {
   event: Event;
   handler: any;
   action?: () => void;
+  chatId?: string;
 }) => {
-  const { event, handler, action } = params;
+  const { event, handler, action, chatId } = params;
   event.preventDefault();
   const formInput = document.querySelector<HTMLInputElement>(".file-input");
   const file = new FormData();
 
   if (formInput && formInput.files) {
     file.append("avatar", formInput.files[0]);
+    if (chatId) {
+      file.set("chatId", chatId);
+    }
 
     const result = await handler(file);
     if (result.status === 200) {
+      closeModalHandler();
       if (action) {
-        closeModalHandler();
         action();
       }
     } else if (result.status > 404) {

@@ -6,6 +6,7 @@ type TRouteConstructor = {
   props?: any;
   exact?: true;
   needAuth?: boolean;
+  isSecure?: boolean;
   redirectPath: string;
   onUnautorized?: any;
 };
@@ -28,6 +29,7 @@ export class Router {
     props = {},
     exact = true,
     needAuth = false,
+    isSecure = false,
     onUnautorized,
     redirectPath,
   }: TRouteConstructor) {
@@ -38,6 +40,7 @@ export class Router {
       { rootQuery: this._rootQuery, exact },
       props,
       needAuth,
+      isSecure,
       onUnautorized,
       redirect
     );

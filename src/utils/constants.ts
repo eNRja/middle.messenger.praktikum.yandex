@@ -7,13 +7,13 @@ export const API_RESOURCES_PATH = `${API_PATH}/resources`;
 export const WSS_PATH = "wss://ya-praktikum.tech/ws/chats";
 
 export const ROUTES: IRouter = {
-  home: { title: "Main", path: "/" },
-  login: { title: "Login", path: "/login" },
-  registration: { title: "Registration", path: "/registration" },
+  home: { title: "Main", path: "/messenger" },
+  login: { title: "Login", path: "/" },
+  registration: { title: "Registration", path: "/sign-up" },
   chat: { title: "Chat", path: "/chat" },
-  profile: { title: "Profile", path: "/profile" },
-  editDetails: { title: "Edit Details", path: "/edit-details" },
-  editPassword: { title: "Edit Password", path: "/edit-password" },
+  profile: { title: "Profile", path: "/settings" },
+  editDetails: { title: "Edit Details", path: "/settings/edit" },
+  editPassword: { title: "Edit Password", path: "/settings/password" },
   error_404: { title: "Error 404", path: "/error-404" },
   error_500: { title: "Error 500", path: "/error-500" },
 };

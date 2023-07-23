@@ -71,6 +71,6 @@ export class ChatAPI extends HTTPTransport {
 
   // Смена аватара чата
   public postChatAvatar(result: any): Promise<XMLHttpRequest> {
-    return this.post(API_ENDPOINTS.chats.chatAvatar, { data: result });
+    return this.put(API_ENDPOINTS.chats.chatAvatar, { data: result });
   }
 }
