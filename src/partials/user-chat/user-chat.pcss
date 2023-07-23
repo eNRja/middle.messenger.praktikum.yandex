@@ -42,7 +42,7 @@
 }
 
 .user-chat__header_menu_button {
-  background-image: url(../../asserts/points.png);
+  background-image: url("../../asserts/points.png");
   background-repeat: no-repeat;
   background-position: center;
   padding: 12px;
@@ -65,10 +65,9 @@
   top: 50px;
   right: 10px;
   background: var(--main-bg-color);
-  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.14);
   border-radius: 12px;
   min-width: 140px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 20%);
   z-index: 1;
   transition: visibility 0s linear 0.5s, opacity 0.5s linear;
 }
@@ -76,7 +75,6 @@
 .user-chat__header_menu_content a {
   display: flex;
   align-items: center;
-  color: black;
   padding: 12px 16px;
   text-decoration: none;
   font-family: var(--main-font-family);
@@ -87,14 +85,14 @@
   color: var(--main-color-text);
 }
 
-.user-chat__header_menu_content img {
-  margin-right: 15px;
-}
-
 /* Изменение цвета выпадающих ссылок при наведении курсора */
 .user-chat__header_menu_content a:hover {
   background-color: #e4edfd;
   border-radius: 12px;
+}
+
+.user-chat__header_menu_content img {
+  margin-right: 15px;
 }
 
 /* Показать выпадающее меню при наведении курсора */
@@ -109,7 +107,7 @@
   filter: invert(56%) sepia(63%) saturate(7127%) hue-rotate(213deg)
     brightness(94%) contrast(103%);
   border-radius: 10px;
-  background-color: rgba(245, 245, 245, 0.1);
+  background-color: rgba(245, 245, 245, 10%);
 }
 
 .user-chat__messages {
@@ -132,7 +130,7 @@
 }
 
 .user-chat__footer_additional_button {
-  background-image: url(../../asserts/staple.png);
+  background-image: url("../../asserts/staple.png");
   background-repeat: no-repeat;
   background-position: center;
   padding: 0;
@@ -155,10 +153,9 @@
   bottom: 50px;
   left: 2px;
   background: var(--main-bg-color);
-  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.14);
   border-radius: 12px;
   min-width: 140px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 20%);
   z-index: 1;
   transition: visibility 0s linear 0.5s, opacity 0.5s linear;
 }
@@ -166,7 +163,6 @@
 .user-chat__footer_additional_content a {
   display: flex;
   align-items: center;
-  color: black;
   padding: 12px 16px;
   text-decoration: none;
   font-family: var(--main-font-family);
@@ -177,14 +173,14 @@
   color: var(--main-color-text);
 }
 
-.user-chat__footer_additional_content img {
-  margin-right: 15px;
-}
-
 /* Изменение цвета выпадающих ссылок при наведении курсора */
 .user-chat__footer_additional_content a:hover {
   background: #e4edfd;
   border-radius: 12px;
+}
+
+.user-chat__footer_additional_content img {
+  margin-right: 15px;
 }
 
 /* Показать выпадающее меню при наведении курсора */
@@ -229,7 +225,7 @@
 }
 
 .user-chat__footer_send-button {
-  background-image: url(../../asserts/send_button.png);
+  background-image: url("../../asserts/send_button.png");
   background-repeat: no-repeat;
   background-position: center;
   border: none;
