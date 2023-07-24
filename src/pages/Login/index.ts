@@ -59,8 +59,13 @@ class LoginPage extends Block {
       },
     });
     this.children.registrationLink = new Link({
-      href: "./sign-up",
       label: "Have no account?",
+      events: {
+        click: (event) => {
+          event.preventDefault();
+          router.go("/sign-up");
+        },
+      },
     });
   }
   protected render(): DocumentFragment {

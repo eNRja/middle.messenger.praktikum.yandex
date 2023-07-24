@@ -145,7 +145,7 @@ export class ChatController {
     return chatAPI
       .postChatAvatar(data)
       .then((response) => {
-        store.dispatch({ activeChat: response.response as any });
+        store.dispatch({ activeChat: response.response });
         return response;
       })
       .catch((error) => {

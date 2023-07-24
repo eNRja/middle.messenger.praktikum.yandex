@@ -1,5 +1,6 @@
 import Link from "../../../components/Link";
 import Block from "../../../core/Block";
+import { router } from "../../../core/router";
 import { withRouter } from "../../../hocs/withRouter";
 import template from "./error-500.hbs";
 
@@ -12,8 +13,13 @@ export class Error500Page extends Block {
 
   protected init(): void {
     this.children.homeLink = new Link({
-      href: "./",
       label: "Home",
+      events: {
+        click: (event) => {
+          event.preventDefault();
+          router.go("/messenger");
+        },
+      },
     });
   }
   protected render(): DocumentFragment {

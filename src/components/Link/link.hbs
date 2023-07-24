@@ -1,5 +1,9 @@
 {{#if className}}
-  <a href="{{href}}" class={{className}}>{{label}}</a>
+  <a class={{className}}>{{label}}
+    {{#if isProfileImg}}
+      {{{imageNext}}}
+    {{/if}}
+  </a>
 {{else}}
-  <a href="{{href}}" class="link_button">{{label}}</a>
+  <a class="link_button">{{label}}</a>
 {{/if}}

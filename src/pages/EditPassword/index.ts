@@ -29,8 +29,13 @@ export class EditPasswordPage extends Block {
       titleName: value?.first_name,
     });
     this.children.backButton = new Link({
-      href: ROUTES.profile.path,
       label: "",
+      events: {
+        click: (event) => {
+          event.preventDefault();
+          router.go("/messenger");
+        },
+      },
     });
     this.children.imageAvatar = new Image({
       srcImg: srcImage,

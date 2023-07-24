@@ -127,8 +127,13 @@ class RegistrationPage extends Block {
       },
     });
     this.children.loginLink = new Link({
-      href: "./",
       label: "Have an account?",
+      events: {
+        click: (event) => {
+          event.preventDefault();
+          router.go("/messenger");
+        },
+      },
     });
   }
   protected render(): DocumentFragment {

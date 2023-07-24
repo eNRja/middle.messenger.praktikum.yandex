@@ -15,6 +15,7 @@ import ImageOverlay from "../../components/ImageOverlay";
 import { store } from "../../core/store";
 import { withStore } from "../../hocs/withStore";
 import { withRouter } from "../../hocs/withRouter";
+import { router } from "../../core/router";
 
 interface IProfilePagePage {
   name: string;
@@ -40,16 +41,17 @@ class ProfilePage extends Block {
     const srcImage =
       value && value.avatar ? API_RESOURCES_PATH + value.avatar : imgAvatar;
 
-    this.children.backButton = new Link({
-      href: ROUTES.home.path,
-      label: "",
-    });
     this.children.title = new Title({
       titleName: value?.first_name,
     });
     this.children.backButton = new Link({
-      href: ROUTES.home.path,
       label: "",
+      events: {
+        click: (event) => {
+          event.preventDefault();
+          router.go("/messenger");
+        },
+      },
     });
     this.children.imageAvatar = new Image({
       srcImg: srcImage,
@@ -155,14 +157,24 @@ class ProfilePage extends Block {
     });
 
     this.children.editDetailsLink = new Link({
-      href: "./settings/edit",
       label: "Edit details",
       className: "profile__button",
+      events: {
+        click: (event) => {
+          event.preventDefault();
+          router.go("/settings/edit");
+        },
+      },
     });
     this.children.editPasswordLink = new Link({
-      href: "./settings/password",
       label: "Edit password",
       className: "profile__button",
+      events: {
+        click: (event) => {
+          event.preventDefault();
+          router.go("/settings/password");
+        },
+      },
     });
     this.children.logOutLink = new Button({
       label: "Log out",

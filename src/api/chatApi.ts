@@ -70,7 +70,7 @@ export class ChatAPI extends HTTPTransport {
   }
 
   // Смена аватара чата
-  public postChatAvatar(result: any): Promise<XMLHttpRequest> {
+  public postChatAvatar(result: FormData): Promise<XMLHttpRequest> {
     return this.put(API_ENDPOINTS.chats.chatAvatar, { data: result });
   }
 }

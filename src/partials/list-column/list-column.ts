@@ -1,7 +1,7 @@
 import Block from "../../core/Block";
 import template from "./list-column.hbs";
-import Image from "../../components/Image";
-import imgPlus from "../../asserts/Polygon_1.png";
+
+
 import Input from "../../components/Input";
 import ChatColumn from "../chat-column";
 import { focusin, focusout } from "../../utils/validation";
@@ -13,6 +13,9 @@ import { store } from "../../core/store";
 import { ChatController } from "../../api/controllers/chatController";
 import { getTime } from "../../utils/handlers";
 import WebSocketController from "../../api/controllers/webSocketController";
+import { Link } from "../../components/Link/link";
+import { Button } from "../../components/Button";
+import { router } from "../../core/router";
 
 const createNewChat = () => {
   const modal = new Modal({
@@ -34,10 +37,19 @@ export class ListColumn extends Block {
     // const gg = input.message_user === store.state.user ? "Вы: " : ""
     this.props.noChats = store.state.chats.length > 0 ? false : true;
 
-    this.children.imageNext = new Image({
-      srcImg: imgPlus,
-      alt: "next",
+    this.children.profileLink = new Link({
+      label: "Profile",
+      isProfileImg: true,
+      className: "list-column__font_grey_a",
+      events: {
+        click: (event) => {
+          event.preventDefault();
+          router.go("/settings");
+        },
+      },
     });
+
+    
 
     this.children.createNewChatBtn = new PopupBtn({
       class: "chat-button",
