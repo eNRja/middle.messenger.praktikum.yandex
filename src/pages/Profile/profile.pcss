@@ -9,10 +9,11 @@
   height: 100%;
   width: 64px;
   background-color: var(--main-color);
-  background-image: url(../../asserts/send_button.png);
+  background-image: url("../../asserts/send_button.png");
   background-repeat: no-repeat;
   background-position: center;
-  -webkit-transform: rotate(180deg);
+
+  /* -webkit-transform: rotate(180deg); */
   transform: rotate(180deg);
   transition: 0.4s;
   border: none;
@@ -42,6 +43,7 @@
 }
 
 .profile__avatar {
+  border: 10px solid red;
   height: 130px;
   width: 130px;
   background: #efefef;
@@ -52,7 +54,7 @@
 .profile__avatar-overlay {
   display: flex;
   position: absolute;
-  top: -10;
+  top: -14px;
   left: 0;
   width: 130px;
   height: 130px;
@@ -72,11 +74,7 @@
 .profile__avatar-overlay:hover {
   opacity: 0.8;
   cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.profile__name {
-  text-align: center;
+  background-color: #000;
 }
 
 .profile__row {

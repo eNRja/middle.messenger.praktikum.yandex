@@ -2,28 +2,21 @@
   display: flex;
   min-width: 310px;
   flex-direction: column;
-  padding: 10px;
+  padding: 10px 0;
   border-right: 2px solid #eaeaea;
   color: var(--text-color);
   background-color: var(--main-color);
-  &__title {
-    font-size: 48px;
-    padding: 15px 0;
-  }
-  &__text {
-    font-size: 24px;
-    padding: 15px 0;
-  }
 }
 
 .list-column__font_grey {
-  margin-bottom: 23px;
+  align-self: center;
   text-align: right;
 }
 
-.list-column__font_grey a {
+.list-column__font_grey_a {
   text-decoration: none;
   color: var(--disable-color-text);
+  cursor: pointer;
 }
 
 .list-column__font_grey:visited {
@@ -35,10 +28,9 @@
   display: flex;
   justify-content: center;
   background-color: #efefef;
-  width: 100%;
   height: 32px;
   border-radius: 5px;
-  margin-bottom: 14px;
+  margin: 0 10px 14px;
 }
 
 .list-column__input {
@@ -46,13 +38,13 @@
   text-align: center;
   background: none;
   border: none;
-  background-image: url(../../asserts/Union.png);
+  background-image: url("../../asserts/Union.png");
   background-repeat: no-repeat;
   background-position: 50px;
   outline: none;
   padding-left: 20px;
-  height: 20px; /*высота строки ввода*/
-  font-size: 13px; /*размер шрифта*/
+  height: 20px;
+  font-size: 13px;
   color: var(--disable-color-text);
   width: auto;
 }
@@ -84,4 +76,35 @@
 .test a {
   text-decoration: none;
   color: blue;
+}
+
+.chat-button {
+  height: 22px;
+  width: 22px;
+  padding: 10px;
+}
+
+.chat-div_button {
+  transition: 0.4s;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.chat-div_button:hover {
+  opacity: 1;
+}
+
+.list-column__chat {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 10px;
+}
+
+.list-column__ul-chat {
+  outline: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  max-height: 100%;
+  overflow-y: scroll;
 }

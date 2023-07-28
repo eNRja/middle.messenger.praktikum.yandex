@@ -5,5 +5,6 @@ declare module "*.hbs" {
 
   export default template;
 }
+
 declare module "*.svg";
 declare module "*.png";

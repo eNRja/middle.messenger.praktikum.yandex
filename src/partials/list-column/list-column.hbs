@@ -1,48 +1,29 @@
 <div class="list-column">
-  <nav class="list-column__font_grey">
-    <a href="./Profile/profile.hbs">
-      <span>Profile</span>
-      {{{imageNext}}}
-    </a>
-  </nav>
+
+  <div class="list-column__chat">
+    {{{createNewChatBtn}}}
+    <nav class="list-column__font_grey">
+      {{{profileLink}}}
+    </nav>
+  </div>
+
   <form class="list-column__form">
     {{{inputSearch}}}
   </form>
-  {{{chatColumn_1}}}
-  {{{chatColumn_2}}}
-  {{{chatColumn_3}}}
-  <nav class="test">
-    <ul>
-      <li>
-        <a href="./add-user">add user</a>
-      </li>
-      <li>
-        <a href="./delete-user">delete user</a>
-      </li>
-      <li>
-        <a href="./edit-details">edit details</a>
-      </li>
-      <li>
-        <a href="./edit-password">edit password</a>
-      </li>
-      <li>
-        <a href="./profile">profile</a>
-      </li>
-      <li>
-        <a href="./error-404">error 404</a>
-      </li>
-      <li>
-        <a href="./error-500">error 500</a>
-      </li>
-      <li>
-        <a href="./login">login</a>
-      </li>
-      <li>
-        <a href="./registration">registration</a>
-      </li>
-      <li>
-        <a href="./load-file">load file</a>
-      </li>
+
+  {{#if noChats}}
+
+    <div class="home-page__default">
+      <p>add new chat</p>
+      <p>(left top corner)</p>
+    </div>
+  {{else}}
+
+    <ul class="list-column__ul-chat">
+      {{#each chatColumn}}
+        {{{this}}}
+      {{/each}}
     </ul>
-  </nav>
+
+  {{/if}}
 </div>

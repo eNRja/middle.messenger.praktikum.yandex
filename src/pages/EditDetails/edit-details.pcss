@@ -9,7 +9,7 @@
   height: 100%;
   width: 64px;
   background-color: var(--main-color);
-  background-image: url(../../asserts/send_button.png);
+  background-image: url("../../asserts/send_button.png");
   background-repeat: no-repeat;
   background-position: center;
   transform: rotate(180deg);
@@ -19,22 +19,13 @@
 }
 
 .edit-details__back_button a {
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
+  height: 100%;
+  width: 100%;
 }
 
 .edit-details__back_button:hover {
   cursor: pointer;
   opacity: 0.6;
-}
-
-.edit-details__back_button a {
-  height: 100%;
-  width: 100%;
 }
 
 .edit-details__container {
@@ -51,10 +42,6 @@
   background: #efefef;
   border-radius: 50%;
   background-size: cover;
-}
-
-.edit-details__name {
-  text-align: center;
 }
 
 .edit-details__row {
