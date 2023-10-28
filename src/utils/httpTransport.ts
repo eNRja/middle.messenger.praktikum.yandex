@@ -7,7 +7,7 @@ type RequestOptions = {
   data?: any;
 };
 
-enum METHODS {
+export enum METHODS {
   GET = "GET",
   POST = "POST",
   PUT = "PUT",
@@ -23,8 +23,9 @@ type HTTPRequest = (
 export class HTTPTransport {
   get: HTTPRequest = (url, options = {}) => {
     const query = options.data
-      ? url + queryStringify(options.data as { [key: string]: string })
+      ? url + "?" + queryStringify(options.data as { [key: string]: string })
       : url;
+
     return this.request(
       query,
       { ...options, method: METHODS.GET },
