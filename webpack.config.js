@@ -17,23 +17,8 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.ts$/, // Расширение файлов, которые должны быть обработаны Babel
-        exclude: /node_modules/, // Исключите папку node_modules
-        use: {
-          loader: "babel-loader",
-        },
-      },
-      {
-        test: /\.(png|svg|jpg|gif)$/, // Обрабатываем PNG, SVG и другие изображения
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: "[name].[ext]", // Имя и расширение остаются неизменными
-              outputPath: "./src", // Каталог, в который будут помещены изображения
-            },
-          },
-        ],
+        test: /\.(jpg|png|svg|gif)$/,
+        type: "asset/resource",
       },
       {
         test: /\.hbs$/,
