@@ -7,7 +7,7 @@ import template from "./profile.hbs";
 import imgAvatar from "../../asserts/avatar_default.svg";
 import { Button } from "../../components/Button";
 import { AuthController } from "../../api/controllers/authController";
-import { API_RESOURCES_PATH, ROUTES } from "../../utils/constants";
+import { API_RESOURCES_PATH } from "../../utils/constants";
 import Title from "../../components/Title";
 import Modal from "../../components/Modal";
 import { renderDOM } from "../../core";

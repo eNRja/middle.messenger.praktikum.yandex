@@ -1,6 +1,6 @@
 import { expect } from "chai";
-import sinon from "sinon";
 import { HTTPTransport, METHODS } from "./httpTransport";
+import * as sinon from "sinon";
 
 describe("HTTPTransport", () => {
   it("Метод get должен правильно преобразовать объект в строку", async () => {

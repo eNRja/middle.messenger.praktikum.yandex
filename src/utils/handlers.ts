@@ -80,6 +80,7 @@ export function prettyDate(time: string) {
 
 export const isEmpty = (obj: Object) => {
   for (var key in obj) {
+    console.log(key);
     return false;
   }
   return true;

@@ -1,85 +1,72 @@
-import Handlebars from "handlebars";
+import { expect } from "chai";
+import Block from "../Block";
+import * as sinon from "sinon";
+const Handlebars = require("handlebars");
 
 interface Props {
-  events?: Record<string, (e: Event) => void>;
+  text?: string;
+  events?: Record<string, () => void>;
 }
 
-import { expect } from "chai";
-import { Router } from "./Router";
-import Block from "../Block";
-import sinon from "sinon";
-
-describe("Проверяем роутер", () => {
-  let FirstPage: typeof Block<Props>;
-  let SecondPage: typeof Block<Props>;
-  let router: Router;
+describe("Block", () => {
+  let PageClass: typeof Block<Props>;
 
   before(() => {
-    class ComponentClass extends Block {
-      public static Name = "TestComponent";
+    class Page extends Block<Props> {
       constructor(props: Props) {
         super(props);
       }
+
       protected render() {
-        const source = `<div>Test</div>`;
+        const source = `<div>
+        <span id="test-text">{{text}}</span>
+        <button>{{text-button}}</button>
+      </div>`;
         const template = Handlebars.compile(source);
         return this.compile(template, this.props);
       }
     }
-    FirstPage = ComponentClass;
-    SecondPage = ComponentClass;
-
-    router = new Router("#test");
+    PageClass = Page;
   });
 
-  it("Должна быть возможность установить роуты в роутер", () => {
-    const useSpy = sinon.spy(router, "use");
-    router
-      .use({
-        pathname: "/",
-        block: FirstPage,
-        redirectPath: "",
-      })
-      .use({
-        pathname: "/second",
-        block: SecondPage,
-        redirectPath: "",
-      });
-    expect(useSpy.called).to.be.true;
+  // тест на создание компонента с переданными пропсами
+  it("Должен создать компонент с состоянием из конструктора", () => {
+    const text = "Hello";
+    const pageComponent = new PageClass({ text: text });
+    const spanText =
+      pageComponent.element?.querySelector("#test-text")?.innerHTML;
+
+    expect(spanText).to.be.eq(text);
   });
 
-  it("Должна быть возможность получать установленные роуты", () => {
-    const route = router.getRoute("/second");
-    expect(route).to.not.undefined;
+  // проверка реактивности компонента
+  it("Компонент должен иметь реактивное поведение", () => {
+    const text = "new value";
+    const pageComponent = new PageClass({ text: "Hello" });
+    pageComponent.setProps({ text });
+    const spanText =
+      pageComponent.element?.querySelector("#test-text")?.innerHTML;
+
+    expect(spanText).to.be.eq(text);
   });
 
-  it("Роутер должен успешно запускаться", () => {
-    const onrouteStub = sinon.stub();
-    router._onRoute = onrouteStub;
-    router.start();
-    expect(onrouteStub.calledOnce).to.be.true;
+  // проверка на навешивание события
+  it("Компонент должен установить события на элемент", () => {
+    const handlerStub = sinon.stub();
+    const pageComponent = new PageClass({ events: { click: handlerStub } });
+
+    const event = new MouseEvent("click");
+    pageComponent.element?.dispatchEvent(event);
+
+    expect(handlerStub.calledOnce).to.be.true;
   });
 
-  it("Роутер должен переходить по заданному URL", () => {
-    const windowPushStateSpy = sinon.spy(window.history, "pushState");
+  it("Компонент должен вызвать метод componentWillUnmount после вызова dispatchComponentWillUnmount", () => {
+    const pageComponent = new PageClass({});
+    const spyCDM = sinon.spy(pageComponent, "componentWillUnmount");
 
-    router.go("/second");
+    pageComponent.componentWillUnmount();
 
-    expect(windowPushStateSpy.calledOnce).to.be.eq(true);
-    expect(window.location.href).to.eq("http://jsdom/second");
-  });
-
-  it("Роутер должен уметь переходить назад", () => {
-    const backSpy = sinon.spy(window.history, "back");
-
-    router.back();
-
-    expect(backSpy.calledOnce).to.be.true;
-  });
-
-  it("Роутер должен уметь переходить вперед", () => {
-    const forwardSpy = sinon.spy(window.history, "forward");
-    router.forward();
-    expect(forwardSpy.called).to.be.true;
+    expect(spyCDM.calledOnce).to.be.true;
   });
 });

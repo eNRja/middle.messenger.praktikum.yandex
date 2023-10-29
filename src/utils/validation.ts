@@ -3,7 +3,6 @@ import { ROUTES } from "./constants";
 import { closeModalHandler } from "./handlers";
 import WebSocketController from "../api/controllers/webSocketController";
 import { ChatController } from "../api/controllers/chatController";
-import { store } from "../core/store";
 
 interface Patterns {
   regExp: RegExp;

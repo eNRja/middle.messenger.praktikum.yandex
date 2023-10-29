@@ -1,4 +1,4 @@
-import { JSDOM } from "jsdom";
+const { JSDOM } = require("jsdom");
 
 const jsdom = new JSDOM(`<body></body>`, { url: "http://jsdom" });
 

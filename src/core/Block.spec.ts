@@ -1,7 +1,7 @@
 import { expect } from "chai";
-import sinon from "sinon";
 import Block from "./Block";
-import Handlebars from "handlebars";
+import * as sinon from "sinon";
+const Handlebars = require('handlebars');
 
 interface Props {
   text?: string;
@@ -61,12 +61,12 @@ describe("Block", () => {
     expect(handlerStub.calledOnce).to.be.true;
   });
 
-  it('Компонент должен вызвать метод componentWillUnmount после вызова dispatchComponentWillUnmount', () => {
-    const pageComponent = new PageClass({})
-    const spyCDM = sinon.spy(pageComponent, 'componentWillUnmount')
+  it("Компонент должен вызвать метод componentWillUnmount после вызова dispatchComponentWillUnmount", () => {
+    const pageComponent = new PageClass({});
+    const spyCDM = sinon.spy(pageComponent, "componentWillUnmount");
 
-    pageComponent.componentWillUnmount()
+    pageComponent.componentWillUnmount();
 
-    expect(spyCDM.calledOnce).to.be.true
-  })
+    expect(spyCDM.calledOnce).to.be.true;
+  });
 });
