@@ -7,7 +7,6 @@
     "start": "npm run build && node server.js",
     "dev": "webpack serve --open",
     "build": "webpack",
-    "preview": "vite preview",
     "eslint": "eslint src/**/*.ts",
     "stylelint": "stylelint src/**/*.pcss",
     "test": "mocha"
