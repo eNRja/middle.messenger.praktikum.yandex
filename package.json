@@ -62,7 +62,7 @@
     "esmock": "^2.5.8"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
+    "*.{js,ts, pcss}": [
       "npm run eslint",
       "npm run stylelint",
       "npm run test"
