@@ -4,7 +4,6 @@ import { Link } from "../../components/Link/link";
 import Block from "../../core/Block";
 import { focusin, focusout, submit } from "../../utils/validation";
 import template from "./registration.hbs";
-import { AuthAPI } from "../../api/authApi";
 import { AuthController } from "../../api/controllers/authController";
 import { ROUTES } from "../../utils/constants";
 import { router } from "../../core/router";
@@ -12,7 +11,6 @@ import { withStore } from "../../hocs/withStore";
 import { withRouter } from "../../hocs/withRouter";
 
 interface IRegistration {}
-const authAPI = new AuthAPI();
 
 class RegistrationPage extends Block {
   constructor(props: IRegistration) {

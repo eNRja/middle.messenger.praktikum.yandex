@@ -1,7 +1,5 @@
 import Block from "../../core/Block";
 import template from "./list-column.hbs";
-
-
 import Input from "../../components/Input";
 import ChatColumn from "../chat-column";
 import { focusin, focusout } from "../../utils/validation";
@@ -14,7 +12,6 @@ import { ChatController } from "../../api/controllers/chatController";
 import { getTime } from "../../utils/handlers";
 import WebSocketController from "../../api/controllers/webSocketController";
 import { Link } from "../../components/Link/link";
-import { Button } from "../../components/Button";
 import { router } from "../../core/router";
 
 const createNewChat = () => {
@@ -48,8 +45,6 @@ export class ListColumn extends Block {
         },
       },
     });
-
-    
 
     this.children.createNewChatBtn = new PopupBtn({
       class: "chat-button",
@@ -90,7 +85,7 @@ export class ListColumn extends Block {
             title: input.title,
             unread_count: input.unread_count === 0 ? null : input.unread_count,
             events: {
-              click: (event) => {
+              click: () => {
                 WebSocketController.close(store.state.activeChat.id);
                 ChatController.getChatById(input.id);
                 store.dispatch({ activeChat: input });

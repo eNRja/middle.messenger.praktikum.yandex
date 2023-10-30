@@ -1,5 +1,4 @@
 import { AuthAPI } from "../api/authApi";
-import { router } from "../core/router";
 import { AppState } from "../core/store/";
 import { Dispatch } from "../core/store/Store";
 import { UserDTO } from "../types";

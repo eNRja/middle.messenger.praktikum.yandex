@@ -18,6 +18,7 @@ export class Link extends Block {
   }
 
   init() {
+    console.log("@@@@@@@@@@@@@@@@@@@@", imgPlus);
     this.children.imageNext = new Image({
       srcImg: imgPlus,
       class: "image-next",
